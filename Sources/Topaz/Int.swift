@@ -6,6 +6,18 @@ public func printInt(_ v: Int) {
 
 public struct Int {
     var _value: Builtin.Int64
+    
+    public init(_ _value: Builtin.Int64) {
+      self._value = _value
+    }
+    
+    public init(_ source: Double) {
+      self._value = Builtin.fptosi_FPIEEE64_Int64(source._value)
+    }
+    
+    public init(_ _v: Builtin.Word) {
+        self._value = Builtin.zextOrBitCast_Word_Int64(_v)
+    }
 }
 
 extension Int : _ExpressibleByBuiltinIntegerLiteral, ExpressibleByIntegerLiteral {

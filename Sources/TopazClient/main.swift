@@ -83,3 +83,6 @@ let bb: Bla? = Bla()
 
 let p = printPointer(UnsafeMutableRawPointer(bitPattern: 0x123456))
 _ = printPointer(p)
+
+var i = 1
+var intPointer = UnsafePointer<Int>(&i)
